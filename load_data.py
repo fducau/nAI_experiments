@@ -7,8 +7,6 @@ def load_numerai_data():
     xtrain = train[train.columns.drop('target')]
     ytrain = train.target
 
-    xtest = test[test.columns.drop('t_id')]
-    t_id = test.t_id
-
-    return xtrain, ytrain, xtest, t_id
-
+    xtest = pd.read_csv('./numerai_tournament_data.csv',index_col=0)
+    
+    return xtrain, ytrain, xtest
